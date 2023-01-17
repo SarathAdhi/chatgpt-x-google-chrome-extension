@@ -1,0 +1,30 @@
+{
+  "name": "OpenAI X Google",
+  "version": "1.0.0",
+  "description": "Protect your webpages with password on chrome browser using this extension.",
+  "manifest_version": 3,
+  "author": "Sarath",
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "URL Shotcuts",
+    "default_icon": {
+      "16": "./assets/logo/logo16.png",
+      "24": "./assets/logo/logo24.png",
+      "32": "./assets/logo/logo32.png",
+      "48": "./assets/logo/logo48.png"
+    }
+  },
+  "icons": {
+    "48": "./assets/logo/logo48.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "permissions": ["activeTab", "tabs", "storage", "nativeMessaging"]
+}
